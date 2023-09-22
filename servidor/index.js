@@ -23,7 +23,31 @@ const db =mysql.createConnection({
 })
 // 
 
-// 
+// 	id_usuarior	id_habitacion	num_personas	llegada	salida	fecha_hora	
+app.post("/reserva",(req,res)=>{
+    const id_usuarior = id_usuarior;
+    const id_habitacion = id_habitacion;
+    const num_personas = num_personas;
+    const llegada = llegada;
+    const salida = salida ;
+    const fecha_hora  = fecha_hora;
+    db.query( "insert into  reserva (id_usuarior,id_habitacion,num_personas,llegada,salida,fecha_hora)values(?,?,?,?,?,?)",[id_usuarior,id_habitacion,num_personas,llegada,salida,fecha_hora]
+        ,(error,result)=>{
+            if(error){
+                console.log(error);
+            }else{res.send("registro exitoso")}
+        });
+
+
+
+
+})
+
+
+
+
+
+
 app.post("/create",(req,res)=>{
     const id_usuario = req.body.id_usuario;
     const usuario = req.body.usuario;
@@ -51,6 +75,6 @@ app.post("/create",(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log("puerto activado")
 })
