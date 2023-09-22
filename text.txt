@@ -19,3 +19,9 @@ CREATE TABLE reserva (id_reserva int PRIMARY key AUTO_INCREMENT, id_usuario int(
                       salida date, fecha_hora timestamp ,
                      FOREIGN KEY (id_usuario) REFERENCES datos_usuario(id_usuario)
                      ,FOREIGN key (id_habitacion) REFERENCES habitacione(id_habitacion))
+
+
+notaaaaa:
+
+// nota iniciar prmero el servidor en la consola ( cd servidor  despues  node index.js)
+// despues  iniciar el front con (cb cliente  despues npm start)
