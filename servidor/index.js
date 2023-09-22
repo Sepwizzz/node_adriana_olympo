@@ -23,16 +23,16 @@ const db =mysql.createConnection({
 })
 // 
 
-// 	id_usuarior	id_habitacion	num_personas	llegada	salida	fecha_hora	
+
 app.post("/reserva",(req,res)=>{
-    
-    const id_usuarior = id_usuarior;
-    const id_habitacion = id_habitacion;
-    const num_personas = num_personas;
-    const llegada = llegada;
-    const salida = salida ;
-    const fecha_hora  = fecha_hora;
-    db.query( "insert into  reserva (id_usuarior,id_habitacion,num_personas,llegada,salida,fecha_hora)values(?,?,?,?,?,?)",[id_usuarior,id_habitacion,num_personas,llegada,salida,fecha_hora]
+
+    const id_usuarior = req.body.id_usuarior;
+    const id_habitacion = req.body.id_habitacion;
+    const num_personas = req.body.num_personas;
+    const llegada = req.body.llegada;
+    const salida = req.body.salida ;
+    const fecha_hora  = req.body.fecha_hora;
+    db.query( "insert into  reserva (id_usuario,id_habitacion,num_personas,llegada,salida,fecha_hora)values(?,?,?,?,?,?)",[id_usuarior,id_habitacion,num_personas,llegada,salida,fecha_hora]
         ,(error,result)=>{
             if(error){
                 console.log(error);
