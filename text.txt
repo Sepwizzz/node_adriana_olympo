@@ -1,0 +1,21 @@
+CREATE TABLE servicios (id_servicio int (11) PRIMARY key ,servicio varchar(30))
+
+CREATE TABLE asignacion (id_asignacion int (11))
+
+
+CREATE TABLE tipo_usuario (id_tipo int (11) PRIMARY KEY ,tipo varchar(50));
+
+CREATE TABLE datos_usuario (id_usuario int(11) PRIMARY key ,usuario varchar(30),nombre varchar(60),apellido varchar(60), correo varchar(80),
+                            pasword varchar(130),
+                            id_tipo int (11), FOREIGN key (id_tipo) REFERENCES tipo_usuario(id_tipo))
+
+CREATE TABLE  asignacio (id_asignacio int (11) PRIMARY key ,id_servicio int (11), id_usuario int (11)
+                        ,FOREIGN key (id_servicio)REFERENCES servicios(id_servicio) ,
+                        FOREIGN  key (id_usuario) REFERENCES datos_usuario(id_usuario)  )
+
+CREATE TABLE habitacione (id_habitacion int(11) PRIMARY KEY ,habitacion varchar(30),percio int(10));
+
+CREATE TABLE reserva (id_reserva int PRIMARY key AUTO_INCREMENT, id_usuario int(11),id_habitacion int(11) ,num_personas int (11), llegada date,
+                      salida date, fecha_hora timestamp ,
+                     FOREIGN KEY (id_usuario) REFERENCES datos_usuario(id_usuario)
+                     ,FOREIGN key (id_habitacion) REFERENCES habitacione(id_habitacion))
