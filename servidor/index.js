@@ -25,6 +25,7 @@ const db =mysql.createConnection({
 
 // 	id_usuarior	id_habitacion	num_personas	llegada	salida	fecha_hora	
 app.post("/reserva",(req,res)=>{
+    
     const id_usuarior = id_usuarior;
     const id_habitacion = id_habitacion;
     const num_personas = num_personas;
@@ -42,10 +43,6 @@ app.post("/reserva",(req,res)=>{
 
 
 })
-
-
-
-
 
 
 app.post("/create",(req,res)=>{
@@ -75,6 +72,6 @@ app.post("/create",(req,res)=>{
 
 
 
-app.listen(3001,()=>{
+app.listen(3000,()=>{
     console.log("puerto activado")
 })
